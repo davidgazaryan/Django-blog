@@ -1,0 +1,42 @@
+{% extends 'Main.html' %}
+
+{% block content %}
+    <main class="create-room layout">
+      <div class="container">
+        <div class="layout__box" style="background-color:#000000">
+          <div class="layout__boxHeader" style="background-color:black">
+            <div class="layout__boxTitle">
+              <a href="{% url 'home' %}">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                  <title>arrow-left</title>
+                  <path
+                    d="M13.723 2.286l-13.723 13.714 13.719 13.714 1.616-1.611-10.96-10.96h27.625v-2.286h-27.625l10.965-10.965-1.616-1.607z"
+                  ></path>
+                </svg>
+              </a>
+              <h3 style="margin-left:5px">Browse Topics</h3>
+            </div>
+          </div>
+
+          <div class="topics-page layout__body" style="background-color:black;">
+            <form action="" method="get" class="header__search">
+              <label style="background-color:white">
+                <input style="color:black" name="q" placeholder="Search for topics"/>
+              </label>
+            </form>
+
+            <ul class="topics__list">
+
+              {% for topic in topics %}
+              <li>
+                <a style="color:#ffffff" href="{% url 'home' %}?q={{topic}}">{{topic}} <span style="background-color:#d92e4b; color:white">{{topic.room_set.all.count}} </span></a>  <!-- Gives all the rooms containing the topic -->
+              </li>
+              {% endfor %}
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+
+   {% endblock %}

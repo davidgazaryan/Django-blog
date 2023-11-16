@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href= "{%  static 'style.css' %}"/>
+    <title>JMO</title>
+  </head>
+
+  <body>
+
+
+    {% include 'navbar.html' %}
+    {% if messages %}
+  <ul style="" class="messages">
+    {% for message in messages %}
+    <li style="">{{message}}</li>
+    {% endfor %}
+
+  </ul>
+  {% endif %}
+
+    {% block content %}
+
+    {% endblock %}
+
+    <script src="{%  static 'script.js' %}"></script>
+  </body>
+</html>
+
+
+

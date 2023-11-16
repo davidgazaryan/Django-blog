@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% if page == 'login' %}
+  <div>
+    <form method="post" action="">
+      {% csrf_token %}
+      <label>Username:</label>
+      <input name="username" type="text" placeholder="Enter Username">
+      <label>Password</label>
+      <input type="text" name="password" placeholder="Enter Password">
+      <input type="submit" value="Login">
+    </form>
+    <p>Haven't signed up yet?</p>
+    <a href="{% url 'register' %}">Sign Up</a>
+  </div>
+
+{% else %}
+  <div>
+    <form method="post" action="">
+      {% csrf_token %}
+      {{form.as_p}}  <!-- We know which form variable we are accessing because views files links to this html doc in the render section -->
+      <label>Username:</label>
+      <input name="username" type="text" placeholder="Enter Username">
+      <label>Password</label>
+      <input type="text" name="password" placeholder="Enter Password">
+      <input type="submit" value="Register">
+    </form>
+    <p>Already a user?</p>
+    <a href="{% url 'login' %}">Login</a>
+  </div>
+{% endif %}
+
+{% endblock content %}
+
+
+</body>
+</html>

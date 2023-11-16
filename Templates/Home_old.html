@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+{% extends 'Main.html' %}
+
+{% block content %}
+
+<style>
+  .home-container {
+    display:grid;
+    grid-template-columns: 1fr 5fr 1fr;
+  }
+</style>
+
+
+  <div class="home-container">
+    <div>
+      {% include 'Topics.html' %}
+    </div>
+    <div>
+      <h5>{{room_count}} Rooms Available</h5>
+      <a href="{% url 'create-room' %}">Create Room</a>
+      {% include 'feed.html' %}
+    </div>
+
+    <div>
+      {% include 'activity.html' %}
+    </div>
+
+
+  </div>
+
+{% endblock content %}
+</body>
+</html>
