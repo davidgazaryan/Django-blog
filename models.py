@@ -10,7 +10,7 @@ class Topic(models.Model):
 
 
 class Room(models.Model):  # Given they are foreignkeys you will see you can only select those topics and hosts that are
-    # in the sqlite database, whereas name and description appear as text fields in the room-form page
+    # in the database, whereas name and description appear as text fields in the room-form page
     host = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)  # Foreignkey is field in one table that refers to primary key of another
     # table, primarykeys are unique
     topic = models.ForeignKey(Topic, on_delete=models.SET_NULL, null=True)  # We refer to the Topic class up above
