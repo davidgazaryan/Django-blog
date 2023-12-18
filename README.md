@@ -18,7 +18,6 @@ Live Demo    👉       https://talkingturkey.onrender.com/
 
 
 
-<img width="696" alt="Screen Shot 2023-11-16 at 2 04 19 PM" src="https://github.com/davidgazaryan/Django-blog/assets/126544535/89cce8dc-1222-4d00-a940-204c28206efb">
 
 
 
