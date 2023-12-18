@@ -14,7 +14,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def loginPage(request):
     page = 'login'
-    if request.user.is_authenticated:  # User can't access login page if already logged in
+    if request.user.is_authenticated:  
         return redirect('home')
 
     if request.method == 'POST':
