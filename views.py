@@ -221,7 +221,6 @@ def topicspage(request):
     return render(request, 'topics.html', context=context)
 
 
-@staff_member_required(login_url='home')
 def activities(request):
     room_messages = Message.objects.all()[0:2]
     context = {'room_messages': room_messages}
